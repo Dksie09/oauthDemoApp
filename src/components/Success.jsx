@@ -26,7 +26,7 @@ function Success() {
       setLoading(false);
     };
     fetchData().catch((e) => {
-      navigate("/");
+      console.log(e);
     });
   }, []);
 
