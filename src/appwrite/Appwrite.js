@@ -1,26 +1,21 @@
 import { Client, Account } from "appwrite";
 const client = new Client();
 
-client
-  .setEndpoint(`${process.env.REACT_APP_ENDPOINT}`)
-  .setProject(`${process.env.REACT_APP_PROJECT_ID}`);
+// Set the endpoint and project ID for the client
 
 const account = new Account(client);
 
 export const sdk = {
   register: async (success, failure) => {
-    //create oauth2 session
-    account.createOAuth2Session("github", success, failure);
+    // Register by creating an OAuth2 session
   },
 
   getAccount: async () => {
     //get account data
-    return await account.get();
   },
 
   getSession: async () => {
     //get current session data
-    return await account.getSession("current");
   },
 
   getGithubData: async () => {
@@ -36,6 +31,6 @@ export const sdk = {
   },
 
   logout: async () => {
-    return await account.deleteSession("current");
+    // Delete the session
   },
 };
