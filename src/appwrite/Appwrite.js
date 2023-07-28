@@ -20,8 +20,6 @@ export const sdk = {
 
   getGithubData: async () => {
     //get user's provider access token
-    const promise = await account.getSession("current");
-    console.log(promise.providerAccessToken);
 
     //make a request to github api
     const response = await fetch("https://api.github.com/user", {
